@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ node_data.node_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tag_page_style.css') }}"> <!-- 引入CSS文件 -->
+    <script src="{{ url_for('static', filename='stars.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="node-info">
+    <h2>{{ node_data.node_name }}</h2>
+    <p><b>Unique Name Tag:</b> {{ node_data.unique_value }}</p>
+</div>
+
+<div class="content">
+    {% for content_name, content_data in node_data['contents'].items() %}
+    <div class="content-block">
+        <h3>{{ content_name }}</h3>
+        <p><b>Unique Name Content:</b> {{ content_data.unique_value }}</p> <!-- 显示 unique_name -->
+        <p><b>Type:</b> {{ content_data.type }}</p> <!-- 显示 unique_name -->
+        {{ content_data.info | safe }}
+        <p><b>Tags:</b>
+            {% for tag_data in content_data['other_tags'] %}
+            <a href="{{ url_for('node_page', node_link=tag_data.link) }}">{{ tag_data.name }}</a><i class="fas fa-rocket"></i>,
+
+            {% endfor %}
+
+        <div class="separator"></div> <!-- 自定义分隔符 -->
+        {% if content_data['reviews'] %}
+        {% for review in content_data['reviews'] %}
+        <div class="review">
+            <div class="blue-block"><p><b>From:</b> {{ review.people }}</p></div><br> <!-- 淡粉色区块 -->
+            <div class="pink-block"><p>{{ review.bio }}</p></div> <!-- 淡粉色区块 -->
+
+            <div class="info">
+                <b>Rating:</b>
+                <div class="rating" data-rating="{{ review.stars }}"></div><br>
+                <p><b>Comments:</b><br>{{ review.comments }}</p><br>
+                <div class="separator"></div> <!-- 自定义分隔符 -->
+                <p><b>Status:</b> {{ review.status }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="review">
+            <p>No reviews yet. </p> <!-- 如果没有评论，显示 "No reviews" -->
+        </div>
+        <div class="separator2"></div> <!-- 自定义分隔符 -->
+
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

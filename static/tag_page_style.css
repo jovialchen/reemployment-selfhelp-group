@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.content {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.content h2 {
+    margin-top: 0;
+}
+
+.review {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+}
+
+.review h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.review p {
+    margin-top: 5px;
+    color: #555;
+}
+
+.review .info {
+    color: #777;
+    font-size: 0.9em;
+}
+.separator {
+    height: 1px; /* 分隔符高度 */
+    background-color: #ccc; /* 分隔符颜色 */
+    margin: 20px 0; /* 分隔符上下边距 */
+}
+.separator2 {
+    height: 5px; /* 分隔符高度 */
+    background-color: #ccc; /* 分隔符颜色 */
+    margin: 20px 0; /* 分隔符上下边距 */
+}
+.blue-block {
+    background-color: #e3f2fd; /* 淡粉色背景 */
+    height: 20px; /* 区块高度 */
+    margin-top: 20px; /* 上边距 */
+    margin-bottom: 20px; /* 下边距 */
+    display: inline-block; /* 让块级元素表现为内联块级元素，宽度随内容调整 */
+
+}
+.pink-block {
+    background-color: #ffc0cb; /* 淡粉色背景 */
+    height: 20px; /* 区块高度 */
+    margin-top: 0px; /* 上边距 */
+    margin-bottom: 20px; /* 下边距 */
+    display: inline-block; /* 让块级元素表现为内联块级元素，宽度随内容调整 */
+}
+
