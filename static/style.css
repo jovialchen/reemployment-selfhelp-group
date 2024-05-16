@@ -7,53 +7,124 @@ body {
     justify-content: center; /* 将内容水平居中 */
     font-family: 'Roboto', sans-serif;
 }
-
-.content {
-    background-color: #fff; /* 为内容部分添加白色背景 */
-    padding: 20px;
-    border-radius: 8px; /* 添加一些圆角 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加一些阴影 */
-    max-width: 600px; /* 限制内容宽度，使其更易阅读 */
-}
-
-/* 其他样式保持不变 */
-/* Remove default bullets */
-ul, #myUL {
-  list-style-type: none;
-}
-
-#myUL {
-  margin: 0;
+* {
+  margin: 0 auto;
   padding: 0;
-}
-
-.caret, .bullet {
-  cursor: pointer;
-  user-select: none;
-}
-
-.caret::before {
-  content: "\25B6";
+  text-align: center;
   color: black;
-  display: inline-block;
-  margin-right: 6px;
+  font-family: tahoma;
 }
 
-.bullet::before {
-  content: "\2194";
-  color: black;
-  display: inline-block;
-  margin-right: 6px;
+.items ul {
+  padding-top: 20px;
+  position: relative;
 }
 
-.caret-down::before {
-  transform: rotate(90deg);
+
+/* Make all children "inline" */
+
+.items li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
 }
 
-.nested {
+
+/* Add horizontal connector. Note: they are 2 pseudo-elements */
+
+.items li::before,
+.items li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 50%;
+  height: 45px;
+  z-index: -1;
+  border-top: 1px solid red;
+}
+
+.items li::after {
+  border-left: 1px solid green;
+  left: 50%;
+  right: auto;
+}
+
+
+/* Remove left and right connector from a single child */
+
+.items li:only-child::after,
+.items li:only-child::before {
   display: none;
 }
 
-.active {
-  display: block;
+.items li:only-child {
+  padding-top: 0;
+}
+
+
+/* Remove "outer" connector */
+
+.items li:first-child::before,
+.items li:last-child::after {
+  border: 0 none;
+}
+
+
+/* Add back the down connector for last node */
+
+.items li:last-child::before {
+  border-right: 1px solid blue;
+  border-radius: 0 5px 0 0;
+}
+
+
+/* Add curve line to the first child's connector */
+
+.items li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+
+/* Add down connector from parent */
+
+.items ul ul::before {
+  content: '';
+  border-left: 1px solid magenta;
+  z-index: -1;
+  height: 20px;
+  position: absolute;
+  top: 2px; /* Changed */
+  left: 50%;
+  width: 0;
+}
+
+
+/* Add cosmetic for each item */
+
+.items li a {
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.items li a:hover {
+  background-color: #EEE;
+}
+
+
+/* Experimental for multiple parents */
+
+
+/* Add margin for the parents */
+
+.items li a+a {
+  position: relative;
+  margin-bottom: 12px;
 }
