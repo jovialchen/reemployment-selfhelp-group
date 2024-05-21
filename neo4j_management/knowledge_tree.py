@@ -81,6 +81,18 @@ class KnowledgeTree:
         toastmasters_pathway = self.create_knowledge_tree_node("toastmasters_pathway", "Toastmasters Pathway")
         self.create_knowledge_tree_relation(public_speaking, toastmasters_pathway)
 
+    def create_fun_tree(self, knowledge_tree_root):
+        fun_node = self.create_knowledge_tree_node("fun_node", "Fun")
+        self.create_knowledge_tree_relation(knowledge_tree_root, fun_node)
+
+        philosophy = self.create_knowledge_tree_node("philosophy", "Philosophy")
+        self.create_knowledge_tree_relation(fun_node, philosophy)
+
+        stoicism = self.create_knowledge_tree_node("stoicism", "Stoicism")
+        self.create_knowledge_tree_relation(philosophy, stoicism)
+
+        popular_science_books = self.create_knowledge_tree_node("popular_science_books", "Popular Science Books")
+        self.create_knowledge_tree_relation(fun_node, popular_science_books)
 
     @classmethod
     def create_knowledge_tree(cls, graph, n_matcher, r_matcher):
@@ -88,5 +100,6 @@ class KnowledgeTree:
         knowledge_tree_root = knowledge_tree.create_knowledge_tree_root()
         knowledge_tree.create_technical_tree(knowledge_tree_root)
         knowledge_tree.create_soft_skill_tree(knowledge_tree_root)
+        knowledge_tree.create_fun_tree(knowledge_tree_root)
         return knowledge_tree
 

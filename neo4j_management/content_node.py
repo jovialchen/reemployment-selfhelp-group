@@ -60,6 +60,28 @@ class ContentNode:
         content_node.create_content_node_relation("finetuning", logxpert_sbc)
         content_node.create_content_node_relation("retrieval_augmented_generation", logxpert_sbc)
         content_node.create_content_node_relation("python", logxpert_sbc)
+
+        the_daily_stoic = {
+            "content_uniquev": "the_daily_stoic",
+            "name": "The Daily Stoic",
+            "type": "Book",
+            "info": "A Journal which you can keep to reflect you life like a stoic philosopher"
+        }
+        content_node.create_content_node_relation("stoicism", the_daily_stoic)
+        what_if = {
+            "content_uniquev": "what_if",
+            "name": "What if",
+            "type": "Book",
+            "info": "Author: Randall Munroe"
+        }
+        content_node.create_content_node_relation("popular_science_books", what_if)
+        how_to = {
+            "content_uniquev": "how_to",
+            "name": "How to",
+            "type": "Book",
+            "info": "Author: Randall Munroe</p>"
+        }
+        content_node.create_content_node_relation("popular_science_books", how_to)
         return
 
 
