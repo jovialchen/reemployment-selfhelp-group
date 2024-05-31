@@ -85,6 +85,18 @@
       pip install -r requirements.txt
       ```
 </details>
+<details>
+<summary>Step 4: Install Github Desktop</summary>
+
+
+1. download the application from the [github desktop official site](https://desktop.github.com/).<br>
+2. sign in your Github Desktop.<br>
+3. clone the project.<br>
+
+</details>
+
+
+
 
 # Running the Application
 1. **Start neo4j**
