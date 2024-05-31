@@ -15,8 +15,7 @@ class PeopleNode:
     @classmethod
     def create_people_nodes(cls, graph, n_matcher):
         people_node = cls(graph, n_matcher)
-        jora_properties = {"handle": "jora", "name": "Jo Ravenclaw", "bio": "Gemini|Hogwarts Alumni"}
+        jora_properties = {"handle": "jora", "name": "Jo Rahelios", "bio": "Gemini|Hogwarts Alumni|ENFP"}
         people_node.create_people_node(jora_properties)
-        sixm_properties = {"handle": "sixm", "name": "Sally Isabelle Xavier MaryAnne", "bio": "Lovely, Beautiful, Champion"}
-        people_node.create_people_node(sixm_properties)
+
         return

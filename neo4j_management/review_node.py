@@ -50,12 +50,6 @@ class ReviewNode:
             "status": "Done"
         }
         review_node.create_review_node_relation("tmpw_innovative_planning", "jora",  tmpw_innovative_planning_jora)
-        tmpw_innovative_planning_sixm = {
-            "review_id": "tmpw_innovative_planning_sixm",
-            "stars": 3,
-            "comments": "hahahahhahahaha",
-            "status": "Done"
-        }
-        review_node.create_review_node_relation("tmpw_innovative_planning", "sixm",  tmpw_innovative_planning_sixm)
+
         return
 
