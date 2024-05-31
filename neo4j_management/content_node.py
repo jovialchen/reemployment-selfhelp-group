@@ -1,4 +1,5 @@
 import json
+import time
 
 from py2neo import Node, Relationship
 
@@ -11,7 +12,8 @@ class ContentNode:
     def create_content_node(self, node_properties):
         node = self._n_matcher.match("Content", **{"content_uniquev": node_properties["content_uniquev"]}).first()
         if node is None:
-            node = self._graph.create(Node("Content", **node_properties))
+            node = Node("Content", **node_properties)
+            self._graph.create(node)
         return node
 
     def create_content_node_relation(self, kt_node_value, content_properties):
@@ -24,6 +26,7 @@ class ContentNode:
                 self._graph.create(relationship)
         else:
             print (f"{kt_node_value} does not exist")
+        return
 
 
 

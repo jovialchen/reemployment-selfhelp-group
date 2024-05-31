@@ -47,8 +47,17 @@
   {
     "relations": ["popular_science_books"],
     "properties": {
-      "content_uniquev": "what_if",
+      "content_uniquev": "what_if_randall_munroe",
       "name": "What if",
+      "type": "Book",
+      "info": "Author: Randall Munroe"
+    }
+  },
+  {
+    "relations": ["popular_science_books"],
+    "properties": {
+      "content_uniquev": "how_to_randall_munroe",
+      "name": "How to",
       "type": "Book",
       "info": "Author: Randall Munroe"
     }

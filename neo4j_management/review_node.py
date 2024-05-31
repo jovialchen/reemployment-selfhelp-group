@@ -11,7 +11,8 @@ class ReviewNode:
     def create_review_node(self, node_properties):
         node = self._n_matcher.match("Review", **{"review_id": node_properties["review_id"]}).first()
         if node is None:
-            node = self._graph.create(Node("Review", **node_properties))
+            node = Node("Review", **node_properties)
+            self._graph.create(node)
         return node
 
     def create_review_node_relation(self, content_node_value, people_value, review_properties):
