@@ -171,17 +171,15 @@ To add a content node, follow these steps:
 1. Open [content_node_info.json](neo4j_management%2Fcontent_node_info.json).
 2. Add a new content node entry in the JSON file, following this structure:
     ```json
-    [
-        {
-            "relations": ["finetuning", "retrieval_augmented_generation", "python"],
-            "properties": {
-                "content_uniquev": "logxpert_sbc",
-                "name": "LogXpert: efficient log analysis tool for SBC",
-                "type": "Project",
-                "info": "hahahha</p>"
-            }
+    {
+        "relations": ["finetuning", "retrieval_augmented_generation", "python"],
+        "properties": {
+            "content_uniquev": "logxpert_sbc",
+            "name": "LogXpert: efficient log analysis tool for SBC",
+            "type": "Project",
+            "info": "hahahha</p>"
         }
-    ]
+    }
     ```
 
    This entry includes all the information and relations to all the nodes it may attach to in the knowledge tree. Note that you can use HTML in the info field. Ensure that `content_uniquev` is unique.
@@ -191,19 +189,17 @@ To add a content node, follow these steps:
 To add a review node, follow these steps:
 1. Open [review_node_info.json](neo4j_management%2Freview_node_info.json).
 2. Add a new review node entry in the JSON file, following this structure:
-    ```json
-    [
-        {
-            "content_uniquev": "experpert1_kubernetes",
-            "reviewer": "jora",
-            "properties": {
-                "review_id": "experpert1_kubernetes_review_jora",
-                "stars": 5,
-                "comments": "The best and most complete basics of kubernetes training.",
-                "status": "In Progress"
-            }
+    ```json 
+   {
+        "content_uniquev": "experpert1_kubernetes",
+        "reviewer": "jora",
+        "properties": {
+            "review_id": "experpert1_kubernetes_review_jora",
+            "stars": 5,
+            "comments": "The best and most complete basics of kubernetes training.",
+            "status": "In Progress"
         }
-    ]
+    }
     ```
 
    This entry includes all the information and the content node it attaches to. Ensure that `review_id` is unique.
