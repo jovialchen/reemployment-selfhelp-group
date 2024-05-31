@@ -1,0 +1,22 @@
+[
+  {
+    "content_uniquev": "experpert1_kubernetes",
+    "reviewer": "jora",
+    "properties": {
+      "review_id": "experpert1_kubernetes_review_jora",
+      "stars": 5,
+      "comments": "The best and most complete basics of kubernetes training.",
+      "status": "In Progress"
+    }
+  },
+  {
+    "content_uniquev": "tmpw_innovative_planning",
+    "reviewer": "jora",
+    "properties": {
+      "review_id": "tmpw_innovative_planning_jora",
+      "stars": 4,
+      "comments": "Cool Training. Great techniques for daily use.",
+      "status": "Done"
+    }
+  }
+]

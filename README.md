@@ -54,7 +54,16 @@
 
 </details>
 <details>
-<summary>Step 3: Setting up Python Environment</summary>
+<summary>Step 3: Install Github Desktop</summary>
+
+
+1. download the application from the [github desktop official site](https://desktop.github.com/).<br>
+2. sign in your Github Desktop.<br>
+3. clone the project.<br>
+
+</details>
+<details>
+<summary>Step 4: Setting up Python Environment</summary>
 
 1. download and install anaconda.
     - Go to the [Anaconda Distribution page](https://www.anaconda.com/products/distribution).
@@ -85,15 +94,7 @@
       pip install -r requirements.txt
       ```
 </details>
-<details>
-<summary>Step 4: Install Github Desktop</summary>
 
-
-1. download the application from the [github desktop official site](https://desktop.github.com/).<br>
-2. sign in your Github Desktop.<br>
-3. clone the project.<br>
-
-</details>
 
 
 
@@ -145,51 +146,68 @@ All the code to create nodes is stored in the `neo4j_management` folder.
 
 To add a node to the knowledge tree, follow these steps:
 
-1. Open [knowledge_tree.py](neo4j_management%2Fknowledge_tree.py) and add code in`create_technical_tree()`, `create_soft_skill_tree()`, or `create_soft_skill_tree()`.
-2. Add the following lines of code:
-    ```python
-    # Choose a unique name for your node
-    # Example: popular_science_books
-    popular_science_books = self.create_knowledge_tree_node("popular_science_books", "Popular Science Books")
-    self.create_knowledge_tree_relation(fun_node, popular_science_books)
+1. Open [knowledge_tree_info.json](neo4j_management%2Fknowledge_tree_info.json).
+2. Add a new node object to the appropriate location in the JSON structure. Ensure that the node's name is unique within its category. For example:
+    ```json
+    {
+      "name": "fun_node",
+      "children": [
+        {"name": "philosophy",
+         "children": [
+           {"name": "stoicism"}
+         ]},
+        {"name": "popular_science_books"}
+      ]
+    }
     ```
-    This is to create a relationship between this node and its father branch. Note that `popular_science_books` should be a globally unique name.
+   In this example, the new node "Popular Science Books" is added under the "Fun" category.
+3. Once the JSON file is updated with the new node, run the Python script to update the knowledge tree in Neo4j, as described in the [Usage](#usage) section of the README.
+
+Make sure to update your `knowledge_tree.json` file to reflect any changes or additions to the knowledge tree structure.
 
 ## Adding a Content Node
 
 To add a content node, follow these steps:
-1. Open [content_node.py](neo4j_management%2Fcontent_node.py) and add code in `create_content_nodes()`.
-2. Define the content node as follows:
-    ```python
-    logxpert_sbc = {
-        "content_uniquev": "logxpert_sbc",
-        "name": "LogXpert: efficient log analysis tool for SBC",
-        "type": "Project",
-        "info": "hahahha</p>"
-    }
-    content_node.create_content_node_relation("finetuning", logxpert_sbc)
-    content_node.create_content_node_relation("retrieval_augmented_generation", logxpert_sbc)
-    content_node.create_content_node_relation("python", logxpert_sbc)
+1. Open [content_node_info.json](neo4j_management%2Fcontent_node_info.json).
+2. Add a new content node entry in the JSON file, following this structure:
+    ```json
+    [
+        {
+            "relations": ["finetuning", "retrieval_augmented_generation", "python"],
+            "properties": {
+                "content_uniquev": "logxpert_sbc",
+                "name": "LogXpert: efficient log analysis tool for SBC",
+                "type": "Project",
+                "info": "hahahha</p>"
+            }
+        }
+    ]
     ```
 
-    This is to include all the information and create relations to all the nodes it may attach to in the knowledge tree. Note that you can use HTML in the info field. Note that `content_uniquev` should be unique and it should also be the name of the variable.
+   This entry includes all the information and relations to all the nodes it may attach to in the knowledge tree. Note that you can use HTML in the info field. Ensure that `content_uniquev` is unique.
 
 ## Adding a Review Node
 
 To add a review node, follow these steps:
-1. Open [review_node.py](neo4j_management%2Freview_node.py) and add code in `create_review_nodes()`.
-2. Define the review node:
-    ```python
-    review_node = cls(graph, n_matcher, r_matcher)
-    experpert1_kubernetes_jora = {
-        "review_id": "experpert1_kubernetes_review_jora",
-        "stars": 5,
-        "comments": "The best and most complete basics of kubernetes training.",
-        "status": "In Progress"
-    }
-    review_node.create_review_node_relation("experpert1_kubernetes", "jora",  experpert1_kubernetes_jora)
+1. Open [review_node_info.json](neo4j_management%2Freview_node_info.json).
+2. Add a new review node entry in the JSON file, following this structure:
+    ```json
+    [
+        {
+            "content_uniquev": "experpert1_kubernetes",
+            "reviewer": "jora",
+            "properties": {
+                "review_id": "experpert1_kubernetes_review_jora",
+                "stars": 5,
+                "comments": "The best and most complete basics of kubernetes training.",
+                "status": "In Progress"
+            }
+        }
+    ]
     ```
-   This is to include all the information and create relations to the content node it attaches to.  Note that `review_id` should be unique and it should also be the name of the variable.
+
+   This entry includes all the information and the content node it attaches to. Ensure that `review_id` is unique.
+
 
 
 ## Running the Program to Add All Nodes

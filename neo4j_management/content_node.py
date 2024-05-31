@@ -1,3 +1,5 @@
+import json
+
 from py2neo import Node, Relationship
 
 class ContentNode:
@@ -28,60 +30,17 @@ class ContentNode:
     @classmethod
     def create_content_nodes(cls, graph, n_matcher, r_matcher):
         content_node = cls(graph, n_matcher, r_matcher)
-        experpert1_kubernetes_properties = {
-            "content_uniquev": "experpert1_kubernetes",
-            "name": "EXPERPERT #1: Kubernetes Basics",
-            "type": "Experpert",
-            "info": "temp"
-        }
-        content_node.create_content_node_relation("kubernetes", experpert1_kubernetes_properties)
+        json_file = 'content_node_info.json'
 
-        tmpw_innovative_planning = {
-            "content_uniquev": "tmpw_innovative_planning",
-            "name": "Toastmasters Pathway: Innovative Planning",
-            "type": "Course",
-            "info": "<p>Find the content from the following link <a href=\"https://www.toastmasters.org/guides\">Toastmasters</a> find the course from Base Camp.</p>"
-        }
-        content_node.create_content_node_relation("toastmasters_pathway", tmpw_innovative_planning)
+        with open(json_file, 'r') as file:
+            content_data = json.load(file)
 
-        tmpw_dynamic_leadership = {
-            "content_uniquev": "tmpw_dynamic_leadership",
-            "name": "Toastmasters Pathway: Dynamic Leadership",
-            "type": "Course",
-            "info": "<p>Find the content from the following link <a href=\"https://www.toastmasters.org/guides\">Toastmasters</a> find the course from Base Camp.</p>"
-        }
-        content_node.create_content_node_relation("toastmasters_pathway", tmpw_dynamic_leadership)
-        logxpert_sbc = {
-            "content_uniquev": "logxpert_sbc",
-            "name": "LogXpert: efficient log analysis tool for SBC",
-            "type": "Project",
-            "info": "hahahha</p>"
-        }
-        content_node.create_content_node_relation("finetuning", logxpert_sbc)
-        content_node.create_content_node_relation("retrieval_augmented_generation", logxpert_sbc)
-        content_node.create_content_node_relation("python", logxpert_sbc)
+        for entry in content_data:
+            relations = entry["relations"]
+            properties = entry["properties"]
+            for relation in relations:
+                content_node.create_content_node_relation(relation, properties)
 
-        the_daily_stoic = {
-            "content_uniquev": "the_daily_stoic",
-            "name": "The Daily Stoic",
-            "type": "Book",
-            "info": "A Journal which you can keep to reflect you life like a stoic philosopher"
-        }
-        content_node.create_content_node_relation("stoicism", the_daily_stoic)
-        what_if = {
-            "content_uniquev": "what_if",
-            "name": "What if",
-            "type": "Book",
-            "info": "Author: Randall Munroe"
-        }
-        content_node.create_content_node_relation("popular_science_books", what_if)
-        how_to = {
-            "content_uniquev": "how_to",
-            "name": "How to",
-            "type": "Book",
-            "info": "Author: Randall Munroe</p>"
-        }
-        content_node.create_content_node_relation("popular_science_books", how_to)
-        return
+        return content_node
 
 

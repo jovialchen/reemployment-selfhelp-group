@@ -1,0 +1,56 @@
+[
+  {
+    "relations": ["kubernetes"],
+    "properties": {
+      "content_uniquev": "experpert1_kubernetes",
+      "name": "EXPERPERT #1: Kubernetes Basics",
+      "type": "Experpert",
+      "info": "temp"
+    }
+  },
+  {
+    "relations": ["toastmasters_pathway"],
+    "properties": {
+      "content_uniquev": "tmpw_innovative_planning",
+      "name": "Toastmasters Pathway: Innovative Planning",
+      "type": "Course",
+      "info": "<p>Find the content from the following link <a href=\"https://www.toastmasters.org/guides\">Toastmasters</a> find the course from Base Camp.</p>"
+    }
+  },
+  {
+    "relations": ["toastmasters_pathway"],
+    "properties": {
+      "content_uniquev": "tmpw_dynamic_leadership",
+      "name": "Toastmasters Pathway: Dynamic Leadership",
+      "type": "Course",
+      "info": "<p>Find the content from the following link <a href=\"https://www.toastmasters.org/guides\">Toastmasters</a> find the course from Base Camp.</p>"
+    }
+  },
+  {
+    "relations": ["finetuning", "retrieval_augmented_generation", "python"],
+    "properties": {
+      "content_uniquev": "logxpert_sbc",
+      "name": "LogXpert: efficient log analysis tool for SBC",
+      "type": "Project",
+      "info": "hahahha</p>"
+    }
+  },
+  {
+    "relations": ["stoicism"],
+    "properties": {
+      "content_uniquev": "the_daily_stoic",
+      "name": "The Daily Stoic",
+      "type": "Book",
+      "info": "A Journal which you can keep to reflect you life like a stoic philosopher"
+    }
+  },
+  {
+    "relations": ["popular_science_books"],
+    "properties": {
+      "content_uniquev": "what_if",
+      "name": "What if",
+      "type": "Book",
+      "info": "Author: Randall Munroe"
+    }
+  }
+]

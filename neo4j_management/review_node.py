@@ -1,3 +1,5 @@
+import json
+
 from py2neo import Node, Relationship
 
 class ReviewNode:
@@ -35,21 +37,15 @@ class ReviewNode:
     @classmethod
     def create_review_nodes(cls, graph, n_matcher, r_matcher):
         review_node = cls(graph, n_matcher, r_matcher)
-        experpert1_kubernetes_jora = {
-            "review_id": "experpert1_kubernetes_review_jora",
-            "stars": 5,
-            "comments": "The best and most complete basics of kubernetes training.",
-            "status": "In Progress"
-        }
-        review_node.create_review_node_relation("experpert1_kubernetes", "jora",  experpert1_kubernetes_jora)
+        json_file = "review_node_info.json"
+        with open(json_file, 'r') as file:
+            review_data = json.load(file)
 
-        tmpw_innovative_planning_jora = {
-            "review_id": "tmpw_innovative_planning_jora",
-            "stars": 4,
-            "comments": "Cool Training. Great techniques for daily use.",
-            "status": "Done"
-        }
-        review_node.create_review_node_relation("tmpw_innovative_planning", "jora",  tmpw_innovative_planning_jora)
+        for entry in review_data:
+            content_uniquev = entry["content_uniquev"]
+            reviewer = entry["reviewer"]
+            properties = entry["properties"]
+            review_node.create_review_node_relation(content_uniquev, reviewer, properties)
 
-        return
+        return review_node
 
