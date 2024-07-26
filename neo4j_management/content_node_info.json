@@ -115,5 +115,14 @@
       "type": "Repo",
       "info": "A Repo from langchain for statemachine based agent"
     }
+  },
+  {
+    "relations": ["life_design"],
+    "properties": {
+      "content_uniquev": "designing your life",
+      "name": "Designing your life from Stanford",
+      "type": "Book",
+      "info": "一本实用性非常强的课程"
+    }
   }
 ]

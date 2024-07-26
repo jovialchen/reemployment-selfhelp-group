@@ -58,6 +58,10 @@
         {"name": "public_speaking",
           "children": [
             {"name": "toastmasters_pathway"}
+          ]},
+        {"name": "design_thinking",
+          "children": [
+            {"name": "life_design"}
           ]}
       ]
     },
