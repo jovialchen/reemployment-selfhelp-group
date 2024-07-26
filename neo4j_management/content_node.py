@@ -35,7 +35,7 @@ class ContentNode:
         content_node = cls(graph, n_matcher, r_matcher)
         json_file = 'content_node_info.json'
 
-        with open(json_file, 'r') as file:
+        with open(json_file, 'r', encoding="utf-8") as file:
             content_data = json.load(file)
 
         for entry in content_data:

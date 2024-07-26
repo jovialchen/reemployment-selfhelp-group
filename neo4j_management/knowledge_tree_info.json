@@ -7,9 +7,25 @@
         {
           "name": "programming_language",
           "children": [
-            {"name": "python"},
+            {"name": "python",
+              "children": [
+                {"name": "python_grammar"}
+              ]
+            },
             {"name": "cplusplus"},
             {"name": "javascript"}
+          ]
+        },
+        {
+          "name": "data_engineering"
+        },
+        {
+          "name": "software_engineering"
+        },
+        {
+          "name": "telecom",
+          "children": [
+            {"name": "5G"}
           ]
         },
         {
@@ -50,9 +66,15 @@
       "children": [
         {"name": "philosophy",
           "children": [
-            {"name": "stoicism"}
+            {"name": "stoicism"},
+            {"name": "buddhism"}
           ]},
-        {"name": "popular_science_books"}
+        {"name": "popular_science_books"},
+        {"name": "better_life",
+          "children": [
+            {"name": "health"},
+            {"name": "psychology"}
+          ]}
       ]
     }
   ]

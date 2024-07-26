@@ -61,5 +61,59 @@
       "type": "Book",
       "info": "Author: Randall Munroe"
     }
+  },
+  {
+    "relations": ["buddhism"],
+    "properties": {
+      "content_uniquev": "qianwenzhong_talks_about_buddha",
+      "name": "钱文忠说佛",
+      "type": "Course",
+      "info": "Author: 钱文忠, Platform: 喜马拉雅"
+    }
+  },
+  {
+    "relations": ["5G"],
+    "properties": {
+      "content_uniquev": "discover_5g",
+      "name": "Discover 5G",
+      "type": "Course",
+      "info": "Platform: N Edu"
+    }
+  },
+  {
+    "relations": ["data_engineering"],
+    "properties": {
+      "content_uniquev": "data_thursday",
+      "name": "Data Thursday",
+      "type": "Course",
+      "info": "Platform: Data Scientist from N"
+    }
+  },
+  {
+    "relations": ["data_engineering"],
+    "properties": {
+      "content_uniquev": "data_engineering_of_big_book_from_databricks_2nd",
+      "name": "The Big Book of Data Engineering  on Databricks, 2nd Edition",
+      "type": "Book",
+      "info": "Something Jo ran into randomly"
+    }
+  },
+  {
+    "relations": ["health"],
+    "properties": {
+      "content_uniquev": "immune_system_90_days",
+      "name": "免疫功能90天复原方案",
+      "type": "Book",
+      "info": "Cosmic Exploration Reading Club"
+    }
+  },
+  {
+    "relations": ["retrieval_augmented_generation"],
+    "properties": {
+      "content_uniquev": "langgraph",
+      "name": "LangGraph",
+      "type": "Repo",
+      "info": "A Repo from langchain for statemachine based agent"
+    }
   }
 ]
