@@ -133,5 +133,14 @@
       "type": "Course",
       "info": "<p>All Nokia toastmasters meeting can be recorded using this content.</p>"
     }
+  },
+  {
+    "relations": ["logic"],
+    "properties": {
+      "content_uniquev": "being_logical",
+      "name": "Being Logical",
+      "type": "Book",
+      "info": "the very basic of logic"
+    }
   }
 ]

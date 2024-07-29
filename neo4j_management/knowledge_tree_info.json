@@ -63,6 +63,10 @@
         {"name": "design_thinking",
           "children": [
             {"name": "life_design"}
+          ]},
+        {"name": "common_sense",
+          "children": [
+            {"name": "logic"}
           ]}
       ]
     },
