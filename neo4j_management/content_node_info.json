@@ -124,5 +124,14 @@
       "type": "Book",
       "info": "一本实用性非常强的课程"
     }
+  },
+  {
+    "relations": ["toastmasters_meetings"],
+    "properties": {
+      "content_uniquev": "toastmasters_nokia_meetings",
+      "name": "Toastmaster meetings in Nokia Club",
+      "type": "Course",
+      "info": "<p>All Nokia toastmasters meeting can be recorded using this content.</p>"
+    }
   }
 ]

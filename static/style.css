@@ -1,130 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* 树形菜单基础样式 */
+ul#myUL, ul.nested {
+    list-style-type: none; /* 移除默认列表样式 */
     margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center; /* 将内容水平居中 */
-    font-family: 'Roboto', sans-serif;
-}
-* {
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-  color: black;
-  font-family: tahoma;
+    padding: 0;
 }
 
-.items ul {
-  padding-top: 20px;
-  position: relative;
+/* 默认隐藏嵌套列表 */
+ul.nested {
+    display: none;
 }
 
-
-/* Make all children "inline" */
-
-.items li {
-  float: left;
-  text-align: center;
-  list-style-type: none;
-  position: relative;
-  padding: 20px 5px 0 5px;
+/* 列表项样式 */
+ul#myUL li, ul.nested li {
+    margin-left: 1em; /* 控制缩进 */
 }
 
-
-/* Add horizontal connector. Note: they are 2 pseudo-elements */
-
-.items li::before,
-.items li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 50%;
-  width: 50%;
-  height: 45px;
-  z-index: -1;
-  border-top: 1px solid red;
+/* 展开和折叠按钮样式 */
+.caret {
+    cursor: pointer;
+    user-select: none; /* 防止选中文本 */
 }
 
-.items li::after {
-  border-left: 1px solid green;
-  left: 50%;
-  right: auto;
+/* 折叠状态的箭头 */
+.caret::before {
+    content: "\25B6"; /* 右箭头 */
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
 }
 
-
-/* Remove left and right connector from a single child */
-
-.items li:only-child::after,
-.items li:only-child::before {
-  display: none;
+/* 展开状态的箭头 */
+.caret-down::before {
+    transform: rotate(90deg); /* 旋转箭头 */
 }
 
-.items li:only-child {
-  padding-top: 0;
+/* 列表项图标样式 */
+.bullet::before {
+    content: "\2022"; /* 项目符号 */
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
 }
 
-
-/* Remove "outer" connector */
-
-.items li:first-child::before,
-.items li:last-child::after {
-  border: 0 none;
+/* 图书图标样式 */
+.fas.fa-book {
+    margin-left: 5px; /* 控制图标与文字间距 */
 }
 
-
-/* Add back the down connector for last node */
-
-.items li:last-child::before {
-  border-right: 1px solid blue;
-  border-radius: 0 5px 0 0;
-}
-
-
-/* Add curve line to the first child's connector */
-
-.items li:first-child::after {
-  border-radius: 5px 0 0 0;
-}
-
-
-/* Add down connector from parent */
-
-.items ul ul::before {
-  content: '';
-  border-left: 1px solid magenta;
-  z-index: -1;
-  height: 20px;
-  position: absolute;
-  top: 2px; /* Changed */
-  left: 50%;
-  width: 0;
-}
-
-
-/* Add cosmetic for each item */
-
-.items li a {
-  font-size: 12px;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.items li a:hover {
-  background-color: #EEE;
-}
-
-
-/* Experimental for multiple parents */
-
-
-/* Add margin for the parents */
-
-.items li a+a {
-  position: relative;
-  margin-bottom: 12px;
+/* 可见的嵌套列表 */
+ul.nested.active {
+    display: block;
 }

@@ -57,7 +57,8 @@
       "children": [
         {"name": "public_speaking",
           "children": [
-            {"name": "toastmasters_pathway"}
+            {"name": "toastmasters_pathway"},
+            {"name": "toastmasters_meetings"}
           ]},
         {"name": "design_thinking",
           "children": [
