@@ -4,6 +4,8 @@
 
 ## Installation Guide for Neo4j on Windows 11
 
+Note that for neo4j 4.4.32, java 11 is needed.
+For neo4j 5.26.8, java 17 is needed.
 <details>
 <summary>Step 1: Install Java</summary>
 
